@@ -12,7 +12,7 @@ public class Raza {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idRaza;
 
-    private String nombreRaza; // Ejemplo: "Labrador", "Siames", etc.
+    private String nombre; // Ejemplo: "Labrador", "Siames", etc.
 
     @ManyToOne
     private Especie especie; // Relación con Especie

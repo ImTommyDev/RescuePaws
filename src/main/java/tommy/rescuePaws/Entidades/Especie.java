@@ -11,5 +11,5 @@ public class Especie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idEspecie;
-    private String nombreEspecie; // Ejemplo: "Perro", "Gato", etc.
+    private String nombre; // Ejemplo: "Perro", "Gato", etc.
 }

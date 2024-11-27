@@ -60,6 +60,6 @@ public class Animal {
     @CollectionTable(name = "animal_fotos", joinColumns = @JoinColumn(name = "animal_id"))
     @Column(name = "foto")
     private List<byte[]> fotos; // Almaceno directamente las fotos como bytes, en el caos de que
-    //fuese una aplicación más grande debería implementar una funcionalidad de almacemar las fotos en
+    //fuese una aplicación más grande debería implementar una funcionalidad de almacenar las fotos en
     //un servicio externo (como AWS S3, Firebase o algún servidor propio) y me guardaría la url de cada foto
 }
