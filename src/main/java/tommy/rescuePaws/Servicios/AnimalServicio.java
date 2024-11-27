@@ -66,16 +66,25 @@ public class AnimalServicio implements InterfazAnimalServicio{
     }
 
     @Override
-    public List<Animal> buscarPorRaza(Raza raza) {
+    public List<Animal> buscarPorIdRaza(Integer idRaza) {
         try {
-            if (raza == null) {
-                throw new IllegalArgumentException("Debes seleccionar una raza");
-            }
-            return animalRepositorio.findByRaza(raza);
+            // Buscar animales directamente por el ID de la raza
+            return animalRepositorio.findByRazaId(idRaza);
         } catch (Exception e) {
-            throw new RuntimeException("Error al buscar animales por raza: " + e.getMessage());
+            throw new RuntimeException("Error al buscar animales por raza ID: " + idRaza, e);
         }
     }
+
+    @Override
+    public List<Animal> buscarPorNombreRaza(String nombreRaza) {
+        try {
+            // Buscar animales directamente por el nombre de la raza
+            return animalRepositorio.findByRazaNombreIgnoreCase(nombreRaza);
+        } catch (Exception e) {
+            throw new RuntimeException("Error al buscar animales por nombre de raza: " + nombreRaza, e);
+        }
+    }
+
 
     @Override
     public List<Animal> buscarPorEspecie(String especie) {

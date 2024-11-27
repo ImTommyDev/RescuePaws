@@ -131,17 +131,29 @@ public class AnimalControlador {
     }
 
     /**
-     * Buscar animales por raza
-     * Endpoint: GET /RescuePaws/animales/raza/{raza}
+     * Buscar animales por ID raza
+     * Endpoint: GET /RescuePaws/animales/raza/{idRaza}
      */
-    @GetMapping("/animales/raza/{raza}")
-    public ResponseEntity<List<Animal>> buscarPorRaza(@PathVariable Raza raza) {
+    @GetMapping("/animales/raza/{idRaza}")
+    public ResponseEntity<List<Animal>> buscarPorIdRaza(@PathVariable Integer idRaza) {
         try {
-            List<Animal> animales = animalServicio.buscarPorRaza(raza);
-            logger.info("Animales encontrados con raza {}: {}", raza, animales);
+            List<Animal> animales = animalServicio.buscarPorIdRaza(idRaza);
+            logger.info("Animales encontrados con raza ID {}: {}", idRaza, animales);
             return ResponseEntity.ok(animales);
         } catch (Exception e) {
-            logger.error("Error al buscar animales por raza {}: {}", raza, e.getMessage());
+            logger.error("Error al buscar animales por raza ID {}: {}", idRaza, e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
+
+    @GetMapping("/animales/raza/nombre/{nombreRaza}")
+    public ResponseEntity<List<Animal>> buscarPorNombreRaza(@PathVariable String nombreRaza) {
+        try {
+            List<Animal> animales = animalServicio.buscarPorNombreRaza(nombreRaza);
+            logger.info("Animales encontrados con raza nombre {}: {}", nombreRaza, animales);
+            return ResponseEntity.ok(animales);
+        } catch (Exception e) {
+            logger.error("Error al buscar animales por raza nombre {}: {}", nombreRaza, e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }

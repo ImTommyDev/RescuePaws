@@ -20,8 +20,11 @@ public interface InterfazAnimalServicio {
     // Buscar animales por estado (Ej: EN_REFUGIO, EN_ADOPCION, ADOPTADO)
     List<Animal> buscarPorEstado(Estado estado);
 
-    // Buscar animales por raza
-    List<Animal> buscarPorRaza(Raza raza);
+    // Buscar animales por ID raza
+    List<Animal> buscarPorIdRaza(Integer idRaza);
+
+    // Buscar animales por nombre raza
+    List<Animal> buscarPorNombreRaza(String nombreRaza);
 
     // Buscar animales por especie
     List<Animal> buscarPorEspecie(String especie);

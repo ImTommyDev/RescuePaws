@@ -14,7 +14,13 @@ public interface AnimalRepositorio extends JpaRepository<Animal, Integer> {
     List<Animal> findByEstado(Estado estado);
 
     // Buscar animales por raza
-    List<Animal> findByRaza(Raza nombre);
+    List<Animal> findByRaza(Raza raza);
+
+    // Buscar animales directamente por ID de la raza
+    List<Animal> findByRazaId(Integer idRaza);
+
+    // Buscar animales por el nombre de la raza
+    List<Animal> findByRazaNombreIgnoreCase(String nombre);
 
     // Buscar animales por nombre de especie (IgnoreCase para no tener en cuenta las mayúsculas o minúsculas)
     List<Animal> findByEspecieNombreIgnoreCase(String nombre);

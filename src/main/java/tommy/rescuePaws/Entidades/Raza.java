@@ -10,7 +10,7 @@ import lombok.*;
 public class Raza {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idRaza;
+    private Integer id;
 
     private String nombre; // Ejemplo: "Labrador", "Siames", etc.
 

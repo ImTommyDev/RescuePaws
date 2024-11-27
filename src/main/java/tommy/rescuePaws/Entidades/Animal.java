@@ -15,7 +15,7 @@ import java.util.List;
 public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idAnimal;
+    private Integer id;
 
     private String nombre;
     private Integer edad;
@@ -28,6 +28,7 @@ public class Animal {
     private Especie especie; // Relación con la entidad Especie
 
     @ManyToOne
+    @JoinColumn(name = "raza_id", nullable = false)
     private Raza raza; // Relación con la entidad Raza
 
     @Enumerated(EnumType.STRING)

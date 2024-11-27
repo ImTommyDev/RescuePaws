@@ -10,7 +10,7 @@ import lombok.*;
 public class Vacuna {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idVacuna;
+    private Integer id;
 
-    private String nombreVacuna; // Ejemplo: "Rabia", "Moquillo", etc.
+    private String nombre; // Ejemplo: "Rabia", "Moquillo", etc.
 }

@@ -10,6 +10,6 @@ import lombok.*;
 public class Especie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idEspecie;
+    private Integer id;
     private String nombre; // Ejemplo: "Perro", "Gato", etc.
 }
